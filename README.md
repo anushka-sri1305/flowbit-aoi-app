@@ -1,9 +1,9 @@
 Flowbit AOI Creation App
 
 A single-page application built with React, TypeScript, Vite, Leaflet, and Tailwind CSS.
-Implements AOI (Area of Interest) creation using interactive markers, WMS imagery, and persistent local storage.
+Implements interactive AOI (Area of Interest) creation using markers and WMS imagery.
 
-Developed as part of the Flowbit Frontend Engineer Internship Assignment.
+This project is part of the Flowbit Frontend Engineer Internship Assignment.
 
 🌍 Features
 
@@ -11,17 +11,17 @@ Interactive Leaflet map (OSM + NRW DOP WMS)
 
 Click-to-add markers
 
-"Add Marker" quick action button
+“Add Marker” quick action
 
-Persistent features using localStorage
+Persistent AOIs via localStorage
 
-Sidebar to view and clear saved markers
+Sidebar to view and clear saved points
 
-Clean, responsive UI with Tailwind CSS
+Clean, responsive UI (Tailwind)
 
 Playwright E2E tests
 
-Fully client-side, no backend
+Fully client-side implementation
 
 🗺 Map Library Choice — Leaflet
 
@@ -33,115 +33,110 @@ Native WMS support
 
 Lightweight bundle size
 
-Smooth interactions, fast rendering
+Smooth interaction + fast rendering
 
-Strong ecosystem + community
+Stable ecosystem
 
-Alternatives considered:
+Alternatives:
 
-MapLibre → Great for vector tiles but heavy for this use-case
+Library	Why Not Used
+MapLibre	Heavier, suited for vector tiles
+OpenLayers	Powerful but more complex & larger
+Mapbox GL	License restrictions, overkill for AOIs
 
-OpenLayers → Powerful but complex + larger bundle
-
-Mapbox GL → Licensing constraints + unnecessary for simple AOIs
-
-Leaflet offered the best balance of performance, simplicity, and WMS compatibility.
+Leaflet was the most practical fit for this assignment.
 
 🏛 Architecture Overview
 src/
   components/
-    MapView.tsx      // Map logic, WMS layer, marker rendering
-    Sidebar.tsx      // AOI list and clear functionality
-  App.tsx            // App-level state + localStorage persistence
-  main.tsx           // Entry point
-  styles.css         // Tailwind + Leaflet styles
+    MapView.tsx      # Map logic + WMS + markers
+    Sidebar.tsx      # AOI list + clear button
+  App.tsx            # Global state + persistence
+  main.tsx           # Entry point
+  styles.css         # Styles + Tailwind
 
 
-Decisions:
+Design Principles:
 
-Kept components small and focused
+Small, focused components
 
-Used local state (global store unnecessary for simple AOIs)
+State lifted where required
 
-LocalStorage used for persistence
+LocalStorage for persistence
 
-UI intentionally kept clean and minimal
+Clean, minimal UI
 
 ⚡ Performance Considerations
 
-For scaling to thousands of points/polygons:
+Scalable design for future requirement of thousands of points:
 
-Use marker clustering (Supercluster / Leaflet.markercluster)
+Marker clustering (Supercluster / Leaflet.markercluster)
 
-Use canvas or WebGL rendering layers
+Canvas or WebGL rendering layers
 
-Debounce pan/zoom events
+Lazy-load based on viewport
 
-Lazy-load features based on map bounds
+Debounced map interactions
 
-Offload heavy operations to Web Workers
+Web Workers for heavy operations
 
-Switch to vector tiles if required
-
-Current scope is intentionally lightweight.
+Vector tiles if scale increases significantly
 
 🧪 Testing Strategy
 
 Included:
 
-App loads
+App loads successfully
 
 Map renders
 
 Clicking map stores marker in localStorage
 
-Would add with more time:
+With more time:
 
-Component-level tests (Sidebar, MapView)
+Component-level unit tests
 
 Snapshot tests
 
-WMS tile-load mocking
+Mock tile loading (WMS)
 
-Keyboard navigation + accessibility tests
+A11Y testing (keyboard navigation, roles)
 
 🎯 Tradeoffs
 
-WMS kept simple for readability
+Kept WMS integration simple for readability
 
-Limited to point markers (polygons optional scope)
+Limited to point markers (polygons optional)
 
-No global state manager (not needed here)
+No global state libraries (overkill for this scope)
 
-No full error boundary system (out of scope)
-
-All tradeoffs made intentionally for clarity and submission requirements.
+Minimal UI animations to keep code clean
 
 🔧 Production Readiness
 
-To ship this to production:
+Would add before going live:
 
-Add CORS-safe WMS proxy
+CORS-safe WMS proxy
 
-Add ESLint + Prettier + CI pipeline
+ESLint + Prettier with CI enforcement
 
-Add error handling for failed tile loads
+Error boundaries around map loading
 
-Improve accessibility labels
+Accessibility labels + keyboard focus rings
 
-Add environment variables for WMS URLs
+Environment variables for WMS URLs
 
-Expand test coverage
+Expanded test coverage
 
 ⏱ Time Breakdown
 
-Project setup — 30 min
+Setup — 30 min
 
 Map + WMS integration — 1 hr
 
 UI & styling — 45 min
 
-LocalStorage + state — 30 min
+State + persistence — 30 min
 
 Testing — 30 min
 
@@ -157,4 +152,4 @@ Open: http://localhost:5173
 
 📬 Contact
 
-If you'd like more details, feel free to reach out.
+Feel free to reach out for more details.
