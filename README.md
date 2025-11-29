@@ -7,6 +7,14 @@ This project is part of the **Flowbit Frontend Engineer Internship Assignment**.
 
 ---
 
+## 📸 Screenshot — Map View  
+![Map Screenshot](<img width="1919" height="1016" alt="Screenshot 2025-11-29 231247" src="https://github.com/user-attachments/assets/d375aecd-0c56-4ee8-b046-a15064186969" />
+)
+![Map Screenshot](<img width="1919" height="1000" alt="Screenshot 2025-11-29 231258" src="https://github.com/user-attachments/assets/84961a8e-51ea-4ef5-8470-a5916e2f6448" />)
+![Map Screenshot](<img width="1919" height="1001" alt="Screenshot 2025-11-29 231312" src="https://github.com/user-attachments/assets/f5ffed4d-e972-47ae-8eb8-cc7aafda06b0" />
+)
+
+---
 ## 🌍 Features
 
 - Interactive Leaflet map (OSM + NRW DOP WMS)
