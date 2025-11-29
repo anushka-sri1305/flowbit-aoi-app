@@ -128,5 +128,6 @@ Open the app at:
 👉 http://localhost:5173
 ---
 
-##📬 Contact
+## 📬 Contact
+
 Feel free to reach out for more details.
