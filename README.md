@@ -123,7 +123,7 @@ npm install
 npx playwright install --with-deps   # optional
 npm run dev
 ---
-
+```
 Open the app at:
 👉 http://localhost:5173
 ---
